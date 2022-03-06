@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/palette";
+@import "assets/styles/fonts";
+p, body{
+  margin: 0;
+}
+
+.btn{
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  background-color: $magenta;
+  color: white;
+  cursor: pointer;
+  width: 90px;
+  height: 35px;
+  &:active{
+    transform: scale(1.05);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* Track */
+*::-webkit-scrollbar-track {
+  background: $dark-grey-3 0 0 no-repeat padding-box;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: $dark-grey;
+  border-radius: 10px;
+}

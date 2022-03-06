@@ -1,0 +1,21 @@
+<div class="note-area" [ngClass]="{'right': Position.RIGHT === position}">
+  <img [src]="note.author.image" alt="Author Profile">
+  <div class="container">
+    <div class="header">
+      <span class="font-bold-14" *ngIf="position === Position.LEFT">{{note?.author?.name}} {{note?.author?.surname}}</span>
+      <span class="font-bold-14" *ngIf="position === Position.RIGHT">You</span>
+      <div>
+        <span class="font-roman-12 ">{{note?.publishingDate ? (note?.publishingDate | date: 'dd/MM/yyyy') : '' }}</span>
+        <div class="circle"></div>
+        <span class="font-roman-12 ">{{note?.publishingDate ? (note?.publishingDate | date: 'HH:mm:ss') : '' }}</span>
+      </div>
+    </div>
+    <div class="body">
+      <p #noteText class="font-roman-16" [ngClass]="{ 'open': showFullText}">
+        {{note?.message}}
+      </p>
+      <button *ngIf="isClamped" class="btn" aria-label="Show text" (click)="showFullText = !showFullText">{{showFullText ? 'Read less' : 'Read more'}}</button>
+      <div class="arrow"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="content-page">
+  <div class="notes-area">
+    <div class="header">
+      <div *ngIf="showOpacityArea" class="opacity-area"></div>
+      <div class="filters-area">
+        <span class="font-roman-16">Filter by authors:</span>
+        <div *ngFor="let option of optionsList" class="filter">
+          <label class="font-bold-14" for="{{option.id}}">{{option.title}}</label>
+          <input id="{{option.id}}" type="checkbox" [checked]="option.active" (change)="onSelectedOption(option)">
+        </div>
+      </div>
+    </div>
+    <div #notesBody class="body"  (scroll)="onScrollBody($event)">
+      <app-note [@inOut]="note?.author?.id === currentAuthor?.id ? 'inLeftToRight' : 'inRightToLeft'" *ngFor="let note of notes$ | async | filterNotes: filteredList" [note]="note"
+                [position]="note?.author?.id === currentAuthor?.id ? Position.RIGHT : Position.LEFT">
+      </app-note>
+    </div>
+    <div class="footer">
+      <input type="text" placeholder="Enter note about the process" [(ngModel)]="message">
+      <div class="publish-area">
+        <button class="btn" (click)="onPublishClick()" aria-label="Publish note">
+          <span class="font-roman-16-white">Publish</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
