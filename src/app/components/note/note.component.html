@@ -4,7 +4,7 @@
     <div class="header">
       <span class="font-bold-14" *ngIf="position === Position.LEFT">{{note?.author?.name}} {{note?.author?.surname}}</span>
       <span class="font-bold-14" *ngIf="position === Position.RIGHT">You</span>
-      <div>
+      <div class="publish-date-area">
         <span class="font-roman-12 ">{{note?.publishingDate ? (note?.publishingDate | date: 'dd/MM/yyyy') : '' }}</span>
         <div class="circle"></div>
         <span class="font-roman-12 ">{{note?.publishingDate ? (note?.publishingDate | date: 'HH:mm:ss') : '' }}</span>

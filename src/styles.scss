@@ -5,6 +5,7 @@ p, body{
   margin: 0;
 }
 
+/* button */
 .btn{
   box-sizing: border-box;
   border: 0;
@@ -23,12 +24,11 @@ p, body{
   width: 8px;
   height: 8px;
 }
-/* Track */
+
 *::-webkit-scrollbar-track {
   background: $dark-grey-3 0 0 no-repeat padding-box;
 }
 
-/* Handle */
 *::-webkit-scrollbar-thumb {
   background: $dark-grey;
   border-radius: 10px;

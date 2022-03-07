@@ -4,8 +4,7 @@ import {NotesComponent} from "./pages/notes/notes.component";
 
 const routes: Routes = [
   {path: 'notes', component: NotesComponent},
-  {path: '', redirectTo: '/notes', pathMatch: 'prefix' },
-  {path: '**', redirectTo: '/notes' }
+  {path: '', redirectTo: '/notes', pathMatch: 'prefix' }
 ];
 
 @NgModule({

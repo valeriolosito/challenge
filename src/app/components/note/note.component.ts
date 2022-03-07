@@ -28,8 +28,8 @@ export class NoteComponent implements AfterViewInit{
   onResize() {
     this.isClamped = this.noteText.nativeElement.offsetHeight < this.noteText.nativeElement.scrollHeight
   }
-  constructor(@Inject(ChangeDetectorRef)private cdref: ChangeDetectorRef) {
-  }
+
+  constructor(@Inject(ChangeDetectorRef)private cdref: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.isClamped = this.noteText.nativeElement.offsetHeight < this.noteText.nativeElement.scrollHeight

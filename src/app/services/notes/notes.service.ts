@@ -145,6 +145,10 @@ export class NotesService {
     this.notes$.next(this.notes);
   }
 
+
+  /**
+   * get list of notes as Observable
+   */
   public getNotes(): Observable<Note[]> {
     return this.notes$
   }

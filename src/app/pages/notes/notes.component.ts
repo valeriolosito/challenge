@@ -73,6 +73,10 @@ export class NotesComponent implements OnInit, AfterViewInit {
     );
   }
 
+  /**
+   * @param notes list of notes
+   * set options List
+   */
   private setOptionsList(notes: Note[]) {
     const authors: Author[] = [];
     notes.forEach( (note: Note) => {
@@ -98,6 +102,9 @@ export class NotesComponent implements OnInit, AfterViewInit {
     this.scrollToBottom();
   }
 
+  /**
+   * check if message is valid and add new note
+   */
   onPublishClick(): void{
     if(this.message && this.message.trim().length > 0) {
       const note = {
@@ -121,11 +128,18 @@ export class NotesComponent implements OnInit, AfterViewInit {
     },0)
   }
 
+  /**
+   * @param option
+   * update option value and filtered list
+   */
   onSelectedOption(option: Option): void{
     option.active = !option.active;
     this.setFilteredList();
   }
 
+  /**
+   * set filtered list
+   */
   private setFilteredList(): void {
     const activeOptions = this.optionsList.filter((option: Option) => {
       return option.active

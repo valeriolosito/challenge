@@ -7,9 +7,9 @@ import {Author} from "../models/author";
 })
 export class FilterNotesPipe implements PipeTransform {
   /**
-   * return  list of notes filtered by authors
-   * @param notes
-   * @param authors
+   * return  list of notes filtered by authors. If authors list is null or empty return the list of notes.
+   * @param notes list of notes
+   * @param authors list of authors
    */
   transform(notes: Note[], authors: Author[]): Note[] {
     if (!notes || !authors || authors.length === 0) {
