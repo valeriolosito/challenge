@@ -6,8 +6,6 @@ import {Author} from "../../models/author";
 })
 export class AuthorService {
 
-  constructor() { }
-
   /**
    * get current author
    */

@@ -1,6 +1,6 @@
 import {
   AfterViewInit,
-  Component, ElementRef,
+  Component, ElementRef, Inject,
   OnInit, ViewChild
 } from '@angular/core';
 import {NotesService} from "../../services/notes/notes.service";
@@ -61,7 +61,7 @@ export class NotesComponent implements OnInit, AfterViewInit {
   @ViewChild('notesBody') notesBody: ElementRef
 
 
-  constructor(private notesService: NotesService,private authorService: AuthorService) {
+  constructor(@Inject(NotesService) private notesService: NotesService,@Inject(AuthorService) private authorService: AuthorService) {
     this.notes$ = this.notesService.getNotes().pipe(
       map((data: Note[]) => {
         data = data.sort((a, b) => {

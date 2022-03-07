@@ -1,4 +1,13 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, Input, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  Input,
+  ViewChild
+} from '@angular/core';
 import {Note} from "../../models/note";
 import {Position} from "./position";
 
@@ -19,7 +28,7 @@ export class NoteComponent implements AfterViewInit{
   onResize() {
     this.isClamped = this.noteText.nativeElement.offsetHeight < this.noteText.nativeElement.scrollHeight
   }
-  constructor(private cdref: ChangeDetectorRef) {
+  constructor(@Inject(ChangeDetectorRef)private cdref: ChangeDetectorRef) {
   }
 
   ngAfterViewInit(): void {
