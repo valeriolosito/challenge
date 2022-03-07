@@ -7,7 +7,7 @@ import {Author} from "../models/author";
 })
 export class FilterNotesPipe implements PipeTransform {
   /**
-   * return  list of notes filtered by authors. If authors list is null or empty return the list of notes.
+   * return list of notes filtered by authors. If authors list is null or empty return the list of notes.
    * @param notes list of notes
    * @param authors list of authors
    */

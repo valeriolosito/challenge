@@ -147,7 +147,7 @@ export class NotesService {
 
 
   /**
-   * get list of notes as Observable
+   * return list of notes as Observable
    */
   public getNotes(): Observable<Note[]> {
     return this.notes$

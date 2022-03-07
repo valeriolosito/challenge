@@ -7,7 +7,7 @@ import {Author} from "../../models/author";
 export class AuthorService {
 
   /**
-   * get current author
+   * return the current author
    */
   getCurrentAuthor(): Author{
     return {
